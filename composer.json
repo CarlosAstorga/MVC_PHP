@@ -1,0 +1,15 @@
+{
+	"name": "carlos/mvc_php",
+	"authors": [
+		{
+			"name": "Carlos Astorga",
+			"email": "carlosasthorga@gmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"app\\": "./"
+		}
+	},
+	"require": {}
+}
