@@ -13,52 +13,20 @@
                 <div class="row justify-content-center mb-3 mt-3 text-secondary" style="font-family: 'Nunito', sans-serif;font-size: 2rem">
                     Bug Tracker
                 </div>
-                <form method="post">
 
-                    <div class="form-row mb-3">
-                        <div class="input-group offset-md-2 col-md-8">
-                            <input id="name" type="text" class="form-control" name="name" value="" required autocomplete="name" autofocus placeholder="Nombre">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-signature"></i></span>
-                            </div>
-                        </div>
+                <?php $form = \app\core\form\Form::begin('', 'post') ?>
+                <?php echo $form->field('name', 'fas fa-signature', $model, 'Nombre') ?>
+                <?php echo $form->field('email', 'fas fa-at', $model, 'Correo Electrónico', 'email') ?>
+                <?php echo $form->field('password', 'fas fa-key', $model, 'Contraseña', 'password') ?>
+                <?php echo $form->field('password_confirmation', 'fas fa-key', $model, 'Confirmar contraseña', 'password') ?>
+                <div class="form-group row mb-3">
+                    <div class="col-md-8 offset-md-2">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Registrarse
+                        </button>
                     </div>
-
-                    <div class="form-row  mb-3">
-                        <div class="input-group offset-md-2 col-md-8">
-                            <input id="email" type="email" class="form-control" name="email" value="" required autocomplete="email" placeholder="Correo electronico">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-at"></i></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-row  mb-3">
-                        <div class="input-group offset-md-2 col-md-8">
-                            <input id="password" type="password" class="form-control" name="password" required autocomplete="new-password" placeholder="Contraseña">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-row  mb-3">
-                        <div class="input-group offset-md-2 col-md-8">
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Repetir contraseña">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group row mb-3">
-                        <div class="col-md-8 offset-md-2">
-                            <button type="submit" class="btn btn-primary btn-block">
-                                Registrarse
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                </div>
+                <?php echo \app\core\form\Form::end() ?>
             </div>
         </div>
     </div>
